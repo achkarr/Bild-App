@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "I8mL+sCg3LoFuPdhgUIHuV29ig2QtTIFm91T9JdJTYAn9+9jlPqNgXlJb3XazcI6MA7lwW0hLl+xEc4cUxq0lw==",
+  "success": true,
+  "projectFilePath": "/Users/ronnieachkar/Desktop/bildapp/bildapp.iOS/bildapp.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/ronnieachkar/.nuget/packages/rg.plugins.popup/2.0.0.12/rg.plugins.popup.2.0.0.12.nupkg.sha512",
+    "/Users/ronnieachkar/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/ronnieachkar/.nuget/packages/xam.plugin.connectivity/3.2.0/xam.plugin.connectivity.3.2.0.nupkg.sha512",
+    "/Users/ronnieachkar/.nuget/packages/xam.plugins.settings/3.1.1/xam.plugins.settings.3.1.1.nupkg.sha512",
+    "/Users/ronnieachkar/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
+    "/Users/ronnieachkar/.nuget/packages/xamarin.forms/5.0.0.2012/xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}

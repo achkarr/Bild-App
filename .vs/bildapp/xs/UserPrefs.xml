@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{01BD520A-0E00-4FFB-B829-A8FA3DB3E2AF}|Default">
+  <MonoDevelop.Ide.ItemProperties.bildapp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="bildapp/MasterDetail.cs">
+    <Files>
+      <File FileName="bildapp/FlyoutMenu.cs" Line="62" Column="57" />
+      <File FileName="bildapp/MasterDetail.cs" Line="12" Column="28" />
+      <File FileName="bildapp/App.xaml.cs" Line="16" Column="1" />
+      <File FileName="bildapp/MainPage.xaml.cs" Line="32" Column="76" />
+      <File FileName="bildapp/Pages/MakeImagePage.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="bildapp" expanded="True">
+            <Node name="bildapp" expanded="True">
+              <Node name="Pages" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+            <Node name="bildapp.Android" expanded="True" />
+            <Node name="bildapp.iOS" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.ItemProperties.bildapp.Android PreferredExecutionTarget="Android.nexus_6_q_10_0_-_api_29" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
