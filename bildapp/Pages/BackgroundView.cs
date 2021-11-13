@@ -7,11 +7,42 @@ namespace bildapp.Pages
 {
     public class BackgroundView : ContentPage
     {
+
         public BackgroundView()
         {
 
-            Color[] ColorArray = { Color.Black, Color.Orange, Color.MidnightBlue, Color.Navy, Color.Orchid, Color.Pink, Color.Turquoise, Color.Aqua, Color.BurlyWood, Color.DarkViolet };
+            Color[] ColorArray = { Color.White, Color.Black, Color.Orange, Color.MidnightBlue, Color.Navy, Color.Orchid, Color.Pink, Color.Turquoise, Color.Aqua, Color.BurlyWood, Color.DarkViolet };
+
             //List<Button> ButtonList = new List<Button>();
+
+            var ImageListStack = new StackLayout()
+            {
+                Orientation = StackOrientation.Horizontal,
+                Margin = new Thickness(1, 1, 1, 1),
+                BackgroundColor = Color.White,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HeightRequest = 90
+            };
+
+            for (int i = 0; i < Misc.BackgroundImageArray.Count; i++)
+            {
+                var ImageButton = new ImageButton()
+                {
+                    HorizontalOptions = LayoutOptions.Center,
+                    VerticalOptions = LayoutOptions.CenterAndExpand,
+                    Source = Misc.BackgroundImageArray[i],
+                    
+                    HeightRequest = 50,
+                    WidthRequest = 70,
+                    Margin = new Thickness(2, 2, 2, 2),
+                };
+                ImageButton.Clicked += (sender, e) =>
+                {
+                   MakeImagePage.BannerBackgroundImage.Source = ImageButton.Source;
+                };
+                ImageListStack.Children.Add(ImageButton);
+            }
 
             var ColorListStack = new StackLayout()
             {
@@ -20,7 +51,7 @@ namespace bildapp.Pages
                 BackgroundColor = Color.White,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                HeightRequest = 80
+                HeightRequest = 60
             };
 
             for (int i = 0; i < ColorArray.Length; i++)
@@ -39,6 +70,35 @@ namespace bildapp.Pages
                     MakeImagePage.MainBanner.BackgroundColor = ColorButton.BackgroundColor;
                 };
                 ColorListStack.Children.Add(ColorButton);
+            }
+
+
+            var TextColorList = new StackLayout()
+            {
+                Orientation = StackOrientation.Horizontal,
+                Margin = new Thickness(1, 1, 1, 1),
+                BackgroundColor = Color.White,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HeightRequest = 60
+            };
+
+            for (int i = 0; i < ColorArray.Length; i++)
+            {
+                var TextColorButton = new Button()
+                {
+                    HorizontalOptions = LayoutOptions.Center,
+                    VerticalOptions = LayoutOptions.CenterAndExpand,
+                    BackgroundColor = ColorArray[i],
+                    HeightRequest = 50,
+                    WidthRequest = 50,
+                    Margin = new Thickness(2, 2, 2, 2),
+                };
+                TextColorButton.Clicked += (sender, e) =>
+                {
+                    MakeImagePage.CenterLabel.TextColor = TextColorButton.BackgroundColor;
+                };
+                TextColorList.Children.Add(TextColorButton);
             }
 
             Dictionary<string, double> FontType = new Dictionary<string, double>
@@ -62,7 +122,37 @@ namespace bildapp.Pages
             {
                 { "Normal", 1 },
                 { "Bold", 2 },
-                { "Italic", 2 }
+                { "Italic", 3 }
+            };
+
+            Dictionary<string, double> PaddingOptions = new Dictionary<string, double>
+            {
+                { "10", 10 },
+                { "12", 12 },
+                { "14", 14 },
+                { "16", 16 },
+                { "18", 18 },
+                { "20", 20 },
+            };
+
+            Picker PaddingPicker = new Picker
+            {
+                Title = "20",
+                Margin = new Thickness(0, 20, 0, 15),
+                BackgroundColor = Color.White,
+                HorizontalTextAlignment = TextAlignment.Center,
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+
+            foreach (string PaddingOption in PaddingOptions.Keys)
+            {
+                PaddingPicker.Items.Add(PaddingOption);
+            }
+
+            PaddingPicker.SelectedIndexChanged += (sender, args) =>
+            {
+                var num = double.Parse(PaddingPicker.Items[PaddingPicker.SelectedIndex]);
+                MakeImagePage.CenterLabel.Padding = num;
             };
 
             Picker FontPicker = new Picker
@@ -81,10 +171,8 @@ namespace bildapp.Pages
 
             FontPicker.SelectedIndexChanged += (sender, args) =>
             {
-                if (FontPicker.SelectedIndex == -1)
-                {
-                    MakeImagePage.CenterLabel.FontSize = double.Parse(FontPicker.Items[FontPicker.SelectedIndex]);
-                }
+                var num = double.Parse(FontPicker.Items[FontPicker.SelectedIndex]);
+                MakeImagePage.CenterLabel.FontSize = num;
             };
 
             Picker StylePicker = new Picker
@@ -103,12 +191,12 @@ namespace bildapp.Pages
 
             StylePicker.SelectedIndexChanged += (sender, args) =>
             {
-                if (StylePicker.SelectedIndex == -1)
-                {
-                    var Num = double.Parse(StylePicker.Items[StylePicker.SelectedIndex]);
-                    MakeImagePage.CenterLabelMainSize = Num;
-                    MakeImagePage.CenterLabel.FontSize = Num;
-                }
+                if (StylePicker.SelectedIndex == 0)
+                    MakeImagePage.CenterLabel.FontAttributes = FontAttributes.None;
+                else if (StylePicker.SelectedIndex == 1)
+                    MakeImagePage.CenterLabel.FontAttributes = FontAttributes.Bold;
+                else if (StylePicker.SelectedIndex == 2)
+                    MakeImagePage.CenterLabel.FontAttributes = FontAttributes.Italic;
             };
 
             ScrollView MainContent = new ScrollView();
@@ -123,7 +211,7 @@ namespace bildapp.Pages
                         Text = "Background Color",
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold,
-                        FontSize  = 28,
+                        FontSize  = 22,
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                     },
                     new ScrollView()
@@ -135,10 +223,40 @@ namespace bildapp.Pages
                     },
                     new Label()
                     {
+                        Text = "Text Color",
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontAttributes = FontAttributes.Bold,
+                        FontSize  = 22,
+                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                    },
+                    new ScrollView()
+                    {
+                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                        VerticalOptions = LayoutOptions.FillAndExpand,
+                        Orientation = ScrollOrientation.Horizontal,
+                        Content = TextColorList
+                    },
+                    new Label()
+                    {
+                        Text = "Background Image",
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontAttributes = FontAttributes.Bold,
+                        FontSize = 22,
+                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                    },
+                    new ScrollView()
+                    {
+                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                        VerticalOptions = LayoutOptions.FillAndExpand,
+                        Orientation = ScrollOrientation.Horizontal,
+                        Content = ImageListStack
+                    },
+                    new Label()
+                    {
                         Text = "Font Size",
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold,
-                        FontSize  = 28,
+                        FontSize  = 22,
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                     },
                     FontPicker,
@@ -147,10 +265,19 @@ namespace bildapp.Pages
                         Text = "Font Style",
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold,
-                        FontSize  = 28,
+                        FontSize  = 22,
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                     },
-                    StylePicker
+                    StylePicker,
+                    new Label()
+                    {
+                        Text = "Text Padding",
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontAttributes = FontAttributes.Bold,
+                        FontSize  = 22,
+                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                    },
+                    PaddingPicker
                 }
             };
             Content = MainContent;

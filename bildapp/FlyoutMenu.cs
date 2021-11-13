@@ -28,18 +28,18 @@ namespace bildapp
             });
             flyoutPageItems.Add(new FlyoutPageItem
             {
-                Title = "View Saved Banners",
-                TargetType = typeof(MakeImagePage)
+                Title = "Public Saved Banners",
+                TargetType = typeof(SavedConfigurations)
             });
             flyoutPageItems.Add(new FlyoutPageItem
             {
                 Title = "Settings",
-                TargetType = typeof(MakeImagePage)
+                TargetType = typeof(Settings)
             });
             flyoutPageItems.Add(new FlyoutPageItem
             {
                 Title = "Logout",
-                TargetType = typeof(MakeImagePage)
+                TargetType = typeof(Logout)
             });
 
             listView = new ListView

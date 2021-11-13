@@ -36,16 +36,29 @@ namespace bildapp.Pages
                 HeightRequest = 40
             };
 
-            Button SignUpButton = new Button()
+            Button SignInButton = new Button()
             {
-                BackgroundColor = Color.Blue,
+                BackgroundColor = Color.FromHex("303F9F"),
                 TextColor = Color.White,
                 Text = "Login",
-                VerticalOptions = LayoutOptions.EndAndExpand,
+                VerticalOptions = LayoutOptions.End,
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+            Button RecoverPassword = new Button()
+            {
+                BackgroundColor = Color.SteelBlue,
+                TextColor = Color.White,
+                Text = "Recover Password",
+                VerticalOptions = LayoutOptions.End,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
 
-            SignUpButton.Clicked += async delegate
+            RecoverPassword.Clicked += async delegate
+            {
+                await Navigation.PushAsync(new Recover());
+            };
+
+            SignInButton.Clicked += async delegate
             {
                 if (Username.Text != null && Password.Text != null)
                 {
@@ -53,30 +66,31 @@ namespace bildapp.Pages
                     {
                         if (Username.Text.Length > 0 && Password.Text.Length > 0)
                         {
-                                    string webData = "", LoginToken = "";
+                            string webData = "", LoginToken = "";
 
-                                    var offset = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow);
+                            var offset = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow);
 
-                                    webData = await Misc.MakeConnection("http://34.136.168.234/Api/Login.php",
-                                        "?USER=" + Username.Text +
-                                        "&PASS=" + Misc.CreateMD5(Password.Text) +
-                                        "&INDEX=1");
+                            webData = await Misc.MakeConnection("http://34.136.168.234/Api/Login.php",
+                                "?USER=" + Username.Text +
+                                "&PASS=" + Misc.CreateMD5(Password.Text) +
+                                "&INDEX=1");
 
-                                    Console.WriteLine("http://34.136.168.234/Api/Login.php" +
-                                        "?USER=" + Username.Text +
-                                        "&PASS=" + Misc.CreateMD5(Password.Text) +
-                                        "&INDEX=1");
+                            Console.WriteLine("http://34.136.168.234/Api/Login.php" +
+                                "?USER=" + Username.Text +
+                                "&PASS=" + Misc.CreateMD5(Password.Text) +
+                                "&INDEX=1");
 
                             Console.WriteLine("webData:" + webData);
-                                    if (webData != "0")
-                                    {
-                                        AppSettings.AddOrUpdateValue("token", webData);
-                                        Application.Current.MainPage = new NavigationPage(new MakeImagePage());
-                                    }
-                                    else
-                                        await DisplayAlert("Incorrect Username Or Password", "The Username Or Password You Have Entered Is Incorrect!", "Continue");
+                            if (webData != "0")
+                            {
+                                AppSettings.AddOrUpdateValue("token", webData);
+                                Application.Current.MainPage = new MainPageCS();
+                                //Application.Current.MainPage = new NavigationPage(new MakeImagePage());
+                            }
+                            else
+                                await DisplayAlert("Incorrect Username Or Password", "The Username Or Password You Have Entered Is Incorrect!", "Continue");
 
-                                }
+                        }
 
                     }
                     else
@@ -105,7 +119,8 @@ namespace bildapp.Pages
                         {
                             Content = MainContent
                         },
-                        SignUpButton
+                        SignInButton,
+                        RecoverPassword
                     }
             };
         }

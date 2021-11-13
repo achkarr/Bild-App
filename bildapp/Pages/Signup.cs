@@ -90,7 +90,7 @@ namespace bildapp.Pages
 
             Button SignUpButton = new Button()
             {
-                BackgroundColor = Color.Blue,
+                BackgroundColor = Color.MidnightBlue,
                 TextColor = Color.White,
                 Text = "Signup",
                 VerticalOptions = LayoutOptions.EndAndExpand,
@@ -113,10 +113,9 @@ namespace bildapp.Pages
 
                                         var offset = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow);
 
-                                        webData = await Misc.MakeConnection("http://34.136.168.234/Api/Register.php",
-                                            "&USER=" + Username.Text +
+                                        webData = await Misc.MakeConnection("http://34.136.168.234/Api/Register.php" + "?USER=" + Username.Text +
                                             "&PASS=" + Misc.CreateMD5(Password.Text) +
-                                            "&EMAIL=" + Email.Text);
+                                            "&EMAIL=" + Email.Text, "");
 
                                         webData = Regex.Replace(webData, @"\s+", "");
 
@@ -128,7 +127,8 @@ namespace bildapp.Pages
                                                 Password.Text = "";
                                                 PasswordReentry.Text = "";
                                                 AppSettings.AddOrUpdateValue("token", webData);
-                                                Application.Current.MainPage = new NavigationPage(new MakeImagePage());
+                                                Application.Current.MainPage = new MainPageCS();
+                                                //Application.Current.MainPage = new NavigationPage(new MakeImagePage());
 
                                             });
                                         }

@@ -2,17 +2,44 @@
 using System.Text;
 using System.Net;
 using System.Threading.Tasks;
+using System.Resources;
+using System.Globalization;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
-
-
+//using Microsoft
 namespace bildapp
 {
+    /*public static class StringTranslationExtensions
+    {
+        public static string Translate(this string text)
+        {
+            if (text != null)
+            {
+                var assembly = typeof(StringExtensions).GetTypeInfo().Assembly;
+                var assemblyName = assembly.GetName();
+                ResourceManager resourceManager = new ResourceManager($"{assemblyName.Name}.Resources", assembly);
+                var lg = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+                return resourceManager.GetString(text, new CultureInfo(lg));
+            }
+
+            return null;
+        }
+    }*/
     public class Misc
     {
+        public static List<string> BackgroundImageArray = new List<string>();
         public static string Token { get; set; }
         public static string Username { get; set; }
         public static string Password { get; set; }
         public static string Email { get; set; }
+        public static int CurrentLanguage { get; set; }
+        public static Stream stream { get; set; }
+        public static bool UsingTemplate = false;
+        public static JObject Obj = null;
+        public static string text = "";
+        public static string filepath;
 
         public Misc()
         {

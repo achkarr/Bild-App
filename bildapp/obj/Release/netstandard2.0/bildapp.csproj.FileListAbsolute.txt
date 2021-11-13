@@ -1,0 +1,15 @@
+/Users/ronnieachkar/Desktop/bildapp/bildapp/bin/Release/netstandard2.0/bildapp.deps.json
+/Users/ronnieachkar/Desktop/bildapp/bildapp/bin/Release/netstandard2.0/bildapp.dll
+/Users/ronnieachkar/Desktop/bildapp/bildapp/bin/Release/netstandard2.0/ref/bildapp.dll
+/Users/ronnieachkar/Desktop/bildapp/bildapp/bin/Release/netstandard2.0/bildapp.pdb
+/Users/ronnieachkar/Desktop/bildapp/bildapp/obj/Release/netstandard2.0/bildapp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ronnieachkar/Desktop/bildapp/bildapp/obj/Release/netstandard2.0/App.xaml.g.cs
+/Users/ronnieachkar/Desktop/bildapp/bildapp/obj/Release/netstandard2.0/MainPage.xaml.g.cs
+/Users/ronnieachkar/Desktop/bildapp/bildapp/obj/Release/netstandard2.0/bildapp.AssemblyInfoInputs.cache
+/Users/ronnieachkar/Desktop/bildapp/bildapp/obj/Release/netstandard2.0/bildapp.AssemblyInfo.cs
+/Users/ronnieachkar/Desktop/bildapp/bildapp/obj/Release/netstandard2.0/bildapp.csproj.CoreCompileInputs.cache
+/Users/ronnieachkar/Desktop/bildapp/bildapp/obj/Release/netstandard2.0/XamlC.stamp
+/Users/ronnieachkar/Desktop/bildapp/bildapp/obj/Release/netstandard2.0/bildapp.dll
+/Users/ronnieachkar/Desktop/bildapp/bildapp/obj/Release/netstandard2.0/ref/bildapp.dll
+/Users/ronnieachkar/Desktop/bildapp/bildapp/obj/Release/netstandard2.0/bildapp.pdb
+/Users/ronnieachkar/Desktop/bildapp/bildapp/obj/Release/netstandard2.0/bildapp.csproj.AssemblyReference.cache

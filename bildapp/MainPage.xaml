@@ -15,8 +15,8 @@
             VerticalOptions="EndAndExpand">
             
             <Button
-                Margin="20,0,20,30"
-                HeightRequest="60"
+                Margin="20,0,20,20"
+                HeightRequest="50"
                 BackgroundColor="#303F9F"
                 TextColor="White"
                 Text="Sign in"
@@ -25,14 +25,24 @@
                 Clicked="Login"
                 ></Button>
             <Button
-                Margin="20,0,20,140"
-                HeightRequest="60"
+                Margin="20,0,20,20"
+                HeightRequest="50"
                 BackgroundColor="SteelBlue"
                 TextColor="White"
                 Text="Sign up"
                 VerticalOptions="End"
                 HorizontalOptions="FillAndExpand"
                 Clicked="Signup"
+                ></Button>
+            <Button
+                Margin="20,0,20,20"
+                HeightRequest="50"
+                BackgroundColor="#306F9F"
+                TextColor="White"
+                Text="Skip To App"
+                VerticalOptions="End"
+                HorizontalOptions="FillAndExpand"
+                Clicked="Skip"
                 ></Button>
         </StackLayout>
     </StackLayout>
