@@ -3,6 +3,7 @@
 using Xamarin.Forms;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -19,8 +20,8 @@ namespace bildapp.Pages
             {
                 HorizontalTextAlignment = TextAlignment.Center,
                 Margin = new Thickness(0, 10, 0, 15),
-                Placeholder = "Username",
                 BackgroundColor = Color.White,
+                Placeholder = "Username".Translate(),
                 MaxLength = 72,
                 HeightRequest = 40
             };
@@ -29,7 +30,7 @@ namespace bildapp.Pages
             {
                 HorizontalTextAlignment = TextAlignment.Center,
                 Margin = new Thickness(0, 10, 0, 15),
-                Placeholder = "Password",
+                Placeholder = "Password".Translate(),
                 IsPassword = true,
                 BackgroundColor = Color.White,
                 MaxLength = 72,
@@ -40,15 +41,16 @@ namespace bildapp.Pages
             {
                 BackgroundColor = Color.FromHex("303F9F"),
                 TextColor = Color.White,
-                Text = "Login",
+                Text = "Login".Translate(),
                 VerticalOptions = LayoutOptions.End,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
+
             Button RecoverPassword = new Button()
             {
                 BackgroundColor = Color.SteelBlue,
                 TextColor = Color.White,
-                Text = "Recover Password",
+                Text = "Recover".Translate(),
                 VerticalOptions = LayoutOptions.End,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -88,16 +90,16 @@ namespace bildapp.Pages
                                 //Application.Current.MainPage = new NavigationPage(new MakeImagePage());
                             }
                             else
-                                await DisplayAlert("Incorrect Username Or Password", "The Username Or Password You Have Entered Is Incorrect!", "Continue");
+                                await DisplayAlert("Incorrect_Username_Header".Translate(), "Incorrect_Username_Body".Translate(), "Continue".Translate());
 
                         }
 
                     }
                     else
-                        await DisplayAlert("Empty Fields", "Please Do Not Leave Any Fields Empty.", "Continue");
+                        await DisplayAlert("Empty_Fields_Header".Translate(), "Empty_Feilds_Body".Translate(), "Continue".Translate());
                 }
                 else
-                    await DisplayAlert("No Spaces Allowed", "Whitespaces Are Not Allowed In The Username Or Password.", "Continue");
+                    await DisplayAlert("No_Spaces_Header".Translate(), "No_Spaces_Body".Translate(), "Continue".Translate());
 
             };
 
@@ -108,6 +110,7 @@ namespace bildapp.Pages
                     Password,
                 }
             };
+
             Content = new StackLayout
             {
                 Padding = new Thickness(20, 20, 20, 20),

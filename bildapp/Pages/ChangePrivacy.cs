@@ -3,6 +3,7 @@
 using Xamarin.Forms;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -11,7 +12,7 @@ namespace bildapp.Pages
         public static ISettings AppSettings => CrossSettings.Current;
         public ChangePrivacy()
         {
-            Title = "Change Privacy";
+            Title = "Change_Privacy".Translate();
 
             BackgroundColor = Color.White;
 
@@ -19,7 +20,7 @@ namespace bildapp.Pages
             {
                 BackgroundColor = Color.Blue,
                 TextColor = Color.White,
-                Text = "Disable Data Collection",
+                Text = "Disable_Data_Collection".Translate(),
                 VerticalOptions = LayoutOptions.EndAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -29,7 +30,7 @@ namespace bildapp.Pages
                 var webData = await Misc.MakeConnection("http://34.136.168.234/Api/Privacy.php",
                                         "?TOKEN=" + Misc.Token + "&PRIVACY=1");
 
-                await DisplayAlert("Data Collection Disabled", "We turned off data collection for your account!", "Continue");
+                await DisplayAlert("Data_Collection_Disabled".Translate(), "Data_Collection_Disabled_Body".Translate(), "Continue");
             };
 
             Content = new StackLayout

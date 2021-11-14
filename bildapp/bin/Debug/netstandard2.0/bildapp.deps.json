@@ -9,6 +9,8 @@
     ".NETStandard,Version=v2.0/": {
       "bildapp/1.0.0": {
         "dependencies": {
+          "I18NPortable": "1.0.1",
+          "I18n.net": "0.1.2",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "13.0.1",
           "Plugin.Permissions": "6.0.1",
@@ -21,6 +23,25 @@
         },
         "runtime": {
           "bildapp.dll": {}
+        }
+      },
+      "I18n.net/0.1.2": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.4/I18n.net.dll": {
+            "assemblyVersion": "0.1.1.2",
+            "fileVersion": "0.1.1.2"
+          }
+        }
+      },
+      "I18NPortable/1.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/I18NPortable.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
+          }
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -155,6 +176,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "I18n.net/0.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ziU0p8fXiXaODx0PdhUgf4awYtUYs1gMDWRG4iBgXhrN8+VzCYU8o6QbxZHvvHzsUD12xPaB5uNfxxU5474Qhg==",
+      "path": "i18n.net/0.1.2",
+      "hashPath": "i18n.net.0.1.2.nupkg.sha512"
+    },
+    "I18NPortable/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8bJjONR0aldjQ5aU/Z2ruvOw2CGbZWjGLE5TSAtVfF+6F2kcQ9dwhUj02sSEez0GZKWLvcGfTrD8AGcMfjChsg==",
+      "path": "i18nportable/1.0.1",
+      "hashPath": "i18nportable.1.0.1.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",

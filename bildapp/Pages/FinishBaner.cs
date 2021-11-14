@@ -15,6 +15,7 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -82,7 +83,7 @@ namespace bildapp.Pages
         }
         public FinishBanner()
         {
-            Title = "Complete Banner";
+            Title = "Complete_Banner".Translate();
 
             CenterLabel = new Label()
             {
@@ -173,7 +174,7 @@ namespace bildapp.Pages
 
             var UploadImage = new Button()
             {
-                Text = "Upload Banner",
+                Text = "Upload_Banner".Translate(),
                 BackgroundColor = Color.DeepSkyBlue,
                 TextColor = Color.White,
                 Margin = new Thickness(15, 2, 2, 15)
@@ -191,11 +192,11 @@ namespace bildapp.Pages
                     SavedConfigurations.SavedConfigs.Clear();
                     MainPage.LoadSavedConfigurations();
 
-                    await DisplayAlert("Image Uploaded", "You have successfuly uploaded your custom banner to the server.", "OK");
+                    await DisplayAlert("Image_Uploaded_Header".Translate(), "Image_Uploaded_Body".Translate(), "OK");
                 }
                 else
                 {
-                    await DisplayAlert("No Account", "You can not upload your banner without an account.", "OK");
+                    await DisplayAlert("No_Account".Translate(), "No_Account_Body".Translate(), "OK");
                 }
             };
 
@@ -214,7 +215,7 @@ namespace bildapp.Pages
             var ShareButton = new Button()
             {
                 Margin = new Thickness(15, 2, 2, 15),
-                Text = "Share Banner",
+                Text = "Share_Banner".Translate(),
                 BackgroundColor = Color.FromHex("303F9F"),
                 TextColor = Color.White,
             };
@@ -222,7 +223,7 @@ namespace bildapp.Pages
             {
                 await Share.RequestAsync(new ShareFileRequest
                 {
-                    Title = "Share Banner",
+                    Title = "Share_Banner".Translate(),
                     File = new ShareFile(Misc.filepath)
                 });
             };

@@ -3,6 +3,7 @@
 using Xamarin.Forms;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -11,7 +12,7 @@ namespace bildapp.Pages
         public static ISettings AppSettings => CrossSettings.Current;
         public DeleteAccount()
         {
-            Title = "Delete Account";
+            Title = "Delete_Account".Translate();
 
             BackgroundColor = Color.White;
 
@@ -19,7 +20,7 @@ namespace bildapp.Pages
             {
                 HorizontalTextAlignment = TextAlignment.Center,
                 Margin = new Thickness(0, 10, 0, 15),
-                Placeholder = "Password",
+                Placeholder = "Password".Translate(),
                 BackgroundColor = Color.White,
                 MaxLength = 72,
                 HeightRequest = 40
@@ -29,7 +30,7 @@ namespace bildapp.Pages
             {
                 BackgroundColor = Color.IndianRed,
                 TextColor = Color.White,
-                Text = "Delete Account",
+                Text = "Delete_Account".Translate(),
                 VerticalOptions = LayoutOptions.EndAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -52,14 +53,14 @@ namespace bildapp.Pages
                     if (webData.Contains("1"))
                     {
                         Password.Text = "";
-                        await DisplayAlert("Account Deleted", "Your account has been deleted!", "Continue");
+                        await DisplayAlert("Account_Deleted_Header".Translate(), "Account_Deleted_Body".Translate(), "Continue".Translate());
                         Misc.Token = null;
                         AppSettings.AddOrUpdateValue("token", "");
                         Application.Current.MainPage = new NavigationPage(new MainPage());
                     }
                     else
                     {
-                        await DisplayAlert("Account Deletion Failure", "There was a problem deleting your account!", "Continue");
+                        await DisplayAlert("Account_Deletion_Failure_Header".Translate(), "Account_Deletion_Failure_Body".Translate(), "Continue".Translate());
                     }   
                 }
             };

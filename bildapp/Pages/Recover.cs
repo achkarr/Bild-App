@@ -3,6 +3,7 @@
 using Xamarin.Forms;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -11,7 +12,7 @@ namespace bildapp.Pages
         public static ISettings AppSettings => CrossSettings.Current;
         public Recover()
         {
-            Title = "Recover Password";
+            Title = "Recover_Password".Translate();
 
             BackgroundColor = Color.White;
 
@@ -19,7 +20,7 @@ namespace bildapp.Pages
             {
                 HorizontalTextAlignment = TextAlignment.Center,
                 Margin = new Thickness(0, 10, 0, 15),
-                Placeholder = "Email",
+                Placeholder = "Email".Translate(),
                 BackgroundColor = Color.White,
                 MaxLength = 72,
                 HeightRequest = 40
@@ -29,7 +30,7 @@ namespace bildapp.Pages
             {
                 BackgroundColor = Color.Blue,
                 TextColor = Color.White,
-                Text = "Send Recovery",
+                Text = "Send_Recovery".Translate(),
                 VerticalOptions = LayoutOptions.EndAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -45,7 +46,7 @@ namespace bildapp.Pages
                     //if (webData != "0")
                     //{
                         Email.Text = "";
-                        await DisplayAlert("Email Sent", "Your password recovery email has been sent!", "Continue");
+                        await DisplayAlert("Email_Sent".Translate(), "Email_Send_Body".Translate(), "Continue".Translate());
                         await Navigation.PopAsync();
                     //}
                     //else

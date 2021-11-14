@@ -2,6 +2,27 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "I18n.net/0.1.2": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.4/I18n.net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/I18n.net.dll": {}
+        }
+      },
+      "I18NPortable/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/I18NPortable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/I18NPortable.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -152,6 +173,30 @@
     }
   },
   "libraries": {
+    "I18n.net/0.1.2": {
+      "sha512": "ziU0p8fXiXaODx0PdhUgf4awYtUYs1gMDWRG4iBgXhrN8+VzCYU8o6QbxZHvvHzsUD12xPaB5uNfxxU5474Qhg==",
+      "type": "package",
+      "path": "i18n.net/0.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "i18n.net.0.1.2.nupkg.sha512",
+        "i18n.net.nuspec",
+        "lib/netstandard1.4/I18n.net.dll"
+      ]
+    },
+    "I18NPortable/1.0.1": {
+      "sha512": "8bJjONR0aldjQ5aU/Z2ruvOw2CGbZWjGLE5TSAtVfF+6F2kcQ9dwhUj02sSEez0GZKWLvcGfTrD8AGcMfjChsg==",
+      "type": "package",
+      "path": "i18nportable/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "i18nportable.1.0.1.nupkg.sha512",
+        "i18nportable.nuspec",
+        "lib/netstandard2.0/I18NPortable.dll"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
@@ -967,6 +1012,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "I18NPortable >= 1.0.1",
+      "I18n.net >= 0.1.2",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 13.0.1",
       "Plugin.Permissions >= 6.0.1",
@@ -1016,6 +1063,14 @@
       "netstandard2.0": {
         "targetAlias": "netstandard2.0",
         "dependencies": {
+          "I18NPortable": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          },
+          "I18n.net": {
+            "target": "Package",
+            "version": "[0.1.2, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",

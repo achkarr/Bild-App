@@ -19,6 +19,8 @@
     <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="I18n.net" Version="0.1.2" />
+    <PackageReference Include="I18NPortable" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Pages\" />
@@ -29,9 +31,19 @@
     <None Remove="Plugin.Permissions" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Xamarin.FFImageLoading.Forms" />
+    <None Remove="I18n.net" />
+    <None Remove="Locales\" />
+    <None Remove="Locales\en-US.txt" />
+    <None Remove="I18NPortable" />
+    <None Remove="Locales\en-US %28copy%29.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="Renderer\" />
+    <Folder Include="Locales\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Locales\en-US.txt" />
+    <EmbeddedResource Include="Locales\es-ES.txt" />
   </ItemGroup>
 </Project>

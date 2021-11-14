@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using System.Collections.Generic;
 using bildapp.Pages;
+using I18NPortable;
 
 namespace bildapp
 {
@@ -23,22 +24,22 @@ namespace bildapp
             var flyoutPageItems = new List<FlyoutPageItem>();
             flyoutPageItems.Add(new FlyoutPageItem
             {
-                Title = "Create New Banner",
+                Title = "Create_New_Banner".Translate(),
                 TargetType = typeof(MakeImagePage)
             });
             flyoutPageItems.Add(new FlyoutPageItem
             {
-                Title = "Public Saved Banners",
+                Title = "Public_Saved_Banners".Translate(),
                 TargetType = typeof(SavedConfigurations)
             });
             flyoutPageItems.Add(new FlyoutPageItem
             {
-                Title = "Settings",
+                Title = "Settings".Translate(),
                 TargetType = typeof(Settings)
             });
             flyoutPageItems.Add(new FlyoutPageItem
             {
-                Title = "Logout",
+                Title = "Logout".Translate(),
                 TargetType = typeof(Logout)
             });
 
@@ -65,7 +66,7 @@ namespace bildapp
             };
 
             IconImageSource = "hamburger.png";
-            Title = "Bild App Menu";
+            Title = "Bild_App_Menu".Translate();
             Padding = new Thickness(0, 40, 0, 0);
             Content = new StackLayout
             {

@@ -9,6 +9,7 @@ using System.IO;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Newtonsoft.Json.Linq;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -72,7 +73,7 @@ namespace bildapp.Pages
         }
         public MakeImagePage()
         {
-            Title = "Make Your Banner";
+            Title = "Make_Your_Banner".Translate();
 
             CenterLabel = new Label()
             {
@@ -121,7 +122,7 @@ namespace bildapp.Pages
 
             var FontButton = new Button()
             {
-                Text = "Banner Settings",
+                Text = "Banner_Settings".Translate(),
                 BackgroundColor = Color.SteelBlue,
                 TextColor = Color.White,
                 Margin = new Thickness(15, 2, 2, 15)

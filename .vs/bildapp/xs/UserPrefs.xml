@@ -1,40 +1,20 @@
 ﻿<Properties StartupConfiguration="{01BD520A-0E00-4FFB-B829-A8FA3DB3E2AF}|Default">
-  <MonoDevelop.Ide.ItemProperties.bildapp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008101-001668980E30001E" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="bildapp/Pages/FinishBaner.cs">
+  <MonoDevelop.Ide.ItemProperties.bildapp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DACFD3A9-DB8B-4A5B-B2A9-BF485DF1862F" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="bildapp/Locales/es-ES.txt">
     <Files>
-      <File FileName="bildapp/Pages/FinishBaner.cs" Line="225" Column="44" />
-      <File FileName="bildapp/Pages/MakeImagePage.cs" Line="170" Column="30" />
-      <File FileName="bildapp/Pages/BackgroundView.cs" Line="34" Column="59" />
-      <File FileName="bildapp/Pages/DeleteAccount.cs" />
-      <File FileName="bildapp/Pages/Settings.cs" Line="1" Column="1" />
-      <File FileName="bildapp/Pages/Languages.cs" />
-      <File FileName="bildapp.Android/FileService.cs" Line="28" Column="29" />
-      <File FileName="bildapp/App.xaml.cs" Line="11" Column="6" />
-      <File FileName="bildapp.iOS/Main.cs" Line="11" Column="6" />
-      <File FileName="bildapp.Android/MainActivity.cs" Line="35" Column="1" />
-      <File FileName="bildapp/Pages/UploadPictureToServer.cs" />
-      <File FileName="bildapp.iOS/AppDelegate.cs" Line="27" Column="70" />
-      <File FileName="bildapp.Android/ScreenShotUtils.cs" Line="13" Column="37" />
-      <File FileName="bildapp.iOS/ScreenShotUtils.cs" Line="25" Column="30" />
-      <File FileName="bildapp.iOS/Info.plist" />
-      <File FileName="bildapp.iOS/Entitlements.plist" />
-      <File FileName="bildapp/Misc.cs" Line="42" Column="38" />
-      <File FileName="bildapp.Android/Resources/xml/network_security_config.xml" Line="8" Column="27" />
-      <File FileName="bildapp.Android/Properties/AndroidManifest.xml" Line="8" Column="77" />
-      <File FileName="bildapp/Pages/SavedConfigurations.cs" Line="16" Column="10" />
-      <File FileName="bildapp/MainPage.xaml.cs" Line="47" Column="53" />
-      <File FileName="bildapp/MasterDetail.cs" Line="1" Column="1" />
-      <File FileName="bildapp/FlyoutMenu.cs" Line="31" Column="48" />
-      <File FileName="bildapp.iOS/FileService.cs" Line="29" Column="29" />
+      <File FileName="bildapp/Locales/en-US.txt" Line="66" Column="1" />
+      <File FileName="bildapp/FlyoutMenu.cs" Line="69" Column="49" />
+      <File FileName="bildapp/Locales/es-ES.txt" Line="70" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="bildapp" expanded="True">
             <Node name="bildapp" expanded="True">
-              <Node name="Pages" expanded="True">
-                <Node name="FinishBaner.cs" selected="True" />
+              <Node name="Locales" expanded="True">
+                <Node name="es-ES.txt" selected="True" />
               </Node>
+              <Node name="Pages" expanded="True" />
               <Node name="Renderer" expanded="True" />
               <Node name="App.xaml" expanded="True" />
               <Node name="MainPage.xaml" expanded="True" />
@@ -53,7 +33,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.bildapp.Android AndroidDesignerPreferredTheme="MainTheme" PreferredExecutionTarget="Android.nexus_6_q_10_0_-_api_29" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

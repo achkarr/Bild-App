@@ -3,6 +3,7 @@
 using Xamarin.Forms;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -18,7 +19,7 @@ namespace bildapp.Pages
             Button DeleteAccount = new Button()
             {
                 Padding = 10,
-                Text = "Delete Account",
+                Text = "Delete_Account".Translate(),
                 Margin = new Thickness(0, 10, 0, 15),
                 BackgroundColor = Color.FromRgba(138, 138, 138, 52),
                 HeightRequest = 40
@@ -27,7 +28,7 @@ namespace bildapp.Pages
             Button ChangePassword = new Button()
             {
                 Padding = 10,
-                Text = "Change Password",
+                Text = "Change_Password".Translate(),
                 Margin = new Thickness(0, 10, 0, 15),
                 BackgroundColor = Color.FromRgba(138, 138, 138, 52),
                 HeightRequest = 40
@@ -36,7 +37,7 @@ namespace bildapp.Pages
             Button PrivacySettings = new Button()
             {
                 Padding = 10,
-                Text = "Privacy Settings",
+                Text = "Privacy_Settings".Translate(),
                 Margin = new Thickness(0, 10, 0, 15),
                 BackgroundColor = Color.FromRgba(138, 138, 138, 52),
                 HeightRequest = 40
@@ -45,7 +46,7 @@ namespace bildapp.Pages
             Button LanguageSettings = new Button()
             {
                 Padding = 10,
-                Text = "Language Settings",
+                Text = "Language_Settings".Translate(),
                 Margin = new Thickness(0, 10, 0, 15),
                 BackgroundColor = Color.FromRgba(138, 138, 138, 52),
                 HeightRequest = 40

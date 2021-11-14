@@ -3,6 +3,7 @@
 using Xamarin.Forms;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -11,7 +12,7 @@ namespace bildapp.Pages
         public static ISettings AppSettings => CrossSettings.Current;
         public Languages()
         {
-            Title = "Languages";
+            Title = "Languages".Translate();
 
             BackgroundColor = Color.White;
 
@@ -36,12 +37,14 @@ namespace bildapp.Pages
 
             English.Clicked += async delegate
             {
-                await DisplayAlert("Language Swithced", "Your app is now in English", "Continue");
+                AppSettings.AddOrUpdateValue("Language", "en-US");
+                await DisplayAlert("Language_Switched".Translate(), "Language_Switched_Body".Translate(), "Continue".Translate());
             };
 
             Spanish.Clicked += async delegate
             {
-                await DisplayAlert("Language Swithced", "Your app is now in Spanish", "Continue");
+                AppSettings.AddOrUpdateValue("Language", "es-ES");
+                await DisplayAlert("Language_Switched".Translate(), "Language_Switched_Body".Translate(), "Continue".Translate());
             };
 
             var MainContent = new StackLayout()

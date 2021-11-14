@@ -7,6 +7,7 @@ using Rg.Plugins.Popup.Services;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Threading.Tasks;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -51,7 +52,7 @@ namespace bildapp.Pages
             {
                 HorizontalTextAlignment = TextAlignment.Center,
                 Margin = new Thickness(0, 10, 0, 15),
-                Placeholder = "Username",
+                Placeholder = "Username".Translate(),
                 BackgroundColor = Color.White,
                 MaxLength = 72,
                 HeightRequest = 40
@@ -61,7 +62,7 @@ namespace bildapp.Pages
             {
                 HorizontalTextAlignment = TextAlignment.Center,
                 Margin = new Thickness(0, 10, 0, 15),
-                Placeholder = "Password",
+                Placeholder = "Password".Translate(),
                 IsPassword = true,
                 BackgroundColor = Color.White,
                 MaxLength = 72,
@@ -71,7 +72,7 @@ namespace bildapp.Pages
             {
                 HorizontalTextAlignment = TextAlignment.Center,
                 Margin = new Thickness(0, 10, 0, 15),
-                Placeholder = "Password Confirmation",
+                Placeholder = "Password_Confirmation".Translate(),
                 IsPassword = true,
                 BackgroundColor = Color.White,
                 MaxLength = 72,
@@ -121,7 +122,7 @@ namespace bildapp.Pages
 
                                         if (webData != "0")
                                         {
-                                            await ShowMessage("Signup Completed", "You Have Successfully Signed Up!", "Continue", async () =>
+                                            await ShowMessage("Signup_Completed_Header".Translate(), "Signup_Completed_Body".Translate(), "Continue".Translate(), async () =>
                                             {
                                                 Username.Text = "";
                                                 Password.Text = "";
@@ -133,22 +134,22 @@ namespace bildapp.Pages
                                             });
                                         }
                                         else
-                                            await DisplayAlert("Username Or Email Unavailable", "The Username Or Email You Provided Is Unavailable!", "Continue");
+                                            await DisplayAlert("Username_Or_Email_Unavailable".Translate(), "Username_Or_Email_Unavailable_Body".Translate(), "Continue".Translate());
 
                                     }
                                 }
                                 else
-                                    await DisplayAlert("Invalid Email", "Invalid Email Format.", "Continue");
+                                    await DisplayAlert("Invalid_Email_Header".Translate(), "Invalid_Email_Body".Translate(), "Continue".Translate());
                             }
                             else
-                                await DisplayAlert("Passwords Do Not Match", "Inputed Passwords Do Not Match.", "Continue");
+                                await DisplayAlert("Do_Not_Match_Header".Translate(), "Do_Not_Match_Body".Translate(), "Continue".Translate());
 
                         }
                         else
-                            await DisplayAlert("Empty Fields", "Please Do Not Leave Any Fields Empty.", "Continue");
+                            await DisplayAlert("Empty_Fields_Header".Translate(), "Empty_Feilds_Body".Translate(), "Continue".Translate());
                     }
                     else
-                        await DisplayAlert("No Spaces Allowed", "Whitespaces Are Not Allowed In The Username Or Password.", "Continue");
+                        await DisplayAlert("No_Spaces_Header".Translate(), "No_Spaces_Body".Translate(), "Continue".Translate());
                 
             };
 

@@ -2,6 +2,7 @@
 
 using Xamarin.Forms;
 using System.Collections.Generic;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -208,7 +209,7 @@ namespace bildapp.Pages
                 Children = {
                     new Label()
                     {
-                        Text = "Background Color",
+                        Text = "Background_Color".Translate(),
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold,
                         FontSize  = 22,
@@ -223,7 +224,7 @@ namespace bildapp.Pages
                     },
                     new Label()
                     {
-                        Text = "Text Color",
+                        Text = "Text_Color".Translate(),
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold,
                         FontSize  = 22,
@@ -238,7 +239,7 @@ namespace bildapp.Pages
                     },
                     new Label()
                     {
-                        Text = "Background Image",
+                        Text = "Background_Image".Translate(),
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold,
                         FontSize = 22,
@@ -253,7 +254,7 @@ namespace bildapp.Pages
                     },
                     new Label()
                     {
-                        Text = "Font Size",
+                        Text = "Font_Size".Translate(),
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold,
                         FontSize  = 22,
@@ -262,7 +263,7 @@ namespace bildapp.Pages
                     FontPicker,
                     new Label()
                     {
-                        Text = "Font Style",
+                        Text = "Font_Style".Translate(),
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold,
                         FontSize  = 22,
@@ -271,7 +272,7 @@ namespace bildapp.Pages
                     StylePicker,
                     new Label()
                     {
-                        Text = "Text Padding",
+                        Text = "Text_Padding".Translate(),
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold,
                         FontSize  = 22,

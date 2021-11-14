@@ -3,6 +3,7 @@
 using Xamarin.Forms;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -11,7 +12,7 @@ namespace bildapp.Pages
         public static ISettings AppSettings => CrossSettings.Current;
         public ChangePassword()
         {
-            Title = "Change Password";
+            Title = "Change_Password".Translate();
 
             BackgroundColor = Color.White;
 
@@ -19,7 +20,7 @@ namespace bildapp.Pages
             {
                 HorizontalTextAlignment = TextAlignment.Center,
                 Margin = new Thickness(0, 10, 0, 15),
-                Placeholder = "Password",
+                Placeholder = "Password".Translate(),
                 BackgroundColor = Color.White,
                 MaxLength = 72,
                 HeightRequest = 40
@@ -39,7 +40,7 @@ namespace bildapp.Pages
             {
                 BackgroundColor = Color.MidnightBlue,
                 TextColor = Color.White,
-                Text = "Change Password",
+                Text = "Change_Password".Translate(),
                 VerticalOptions = LayoutOptions.EndAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -48,7 +49,7 @@ namespace bildapp.Pages
             {
                 HorizontalTextAlignment = TextAlignment.Center,
                 Margin = new Thickness(0, 10, 0, 15),
-                Placeholder = "New Password",
+                Placeholder = "New_Password".Translate(),
                 BackgroundColor = Color.White,
                 MaxLength = 72,
                 HeightRequest = 40
@@ -75,23 +76,23 @@ namespace bildapp.Pages
                                     Password.Text = "";
                                     RePassword.Text = "";
                                     NewPassword.Text = "";
-                                    await DisplayAlert("Password Changed", "Your password has been changed!", "Continue");
+                                    await DisplayAlert("Password_Changed_Header".Translate(), "Password_Changed_Body".Translate(), "Continue".Translate());
                                     await Navigation.PopAsync();
                                 }
                                 else
                                 {
-                                    await DisplayAlert("Password Change Error", "There was an issue trying to change your password!", "Continue");
+                                    await DisplayAlert("Password_Change_Error".Translate(), "Password_Change_Error_Body".Translate(), "Continue".Translate());
                                 }
                             }
                             else
                             {
-                                await DisplayAlert("Password Match Error", "The current password and new password can not be the same!", "Continue");
+                                await DisplayAlert("Password_Match_Error".Translate(), "Password_Match_Error_Body".Translate(), "Continue".Translate());
                             }
                         }
                     }
                     else
                     {
-                        await DisplayAlert("Password Match Error", "The current passwords you entered do not match!", "Continue");
+                        await DisplayAlert("Password_Match_Error".Translate(), "Password_Match_Error_Body".Translate(), "Continue".Translate());
                     }
                 }
             };

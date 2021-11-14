@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hIpIaay2W4otPhzzkb8sZTXjOL9ID/W8SnEHE7qleH8+NV3jbAJOmMa6oVcU2BHKo7TuYaWEu34EMxmn3g1GtQ==",
+  "dgSpecHash": "VlU1Ofyb75P69haJriPXtv8XwriltIOcS2oJQ5e8enRDqYDvzMyNkCQ7thM8qcFs8mvtpQxRQoiGKLP++xmg6A==",
   "success": true,
   "projectFilePath": "/Users/ronnieachkar/Desktop/bildapp/bildapp/bildapp.csproj",
   "expectedPackageFiles": [
+    "/Users/ronnieachkar/.nuget/packages/i18n.net/0.1.2/i18n.net.0.1.2.nupkg.sha512",
+    "/Users/ronnieachkar/.nuget/packages/i18nportable/1.0.1/i18nportable.1.0.1.nupkg.sha512",
     "/Users/ronnieachkar/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/Users/ronnieachkar/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
     "/Users/ronnieachkar/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",

@@ -5,6 +5,7 @@ using bildapp.Renderer;
 using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using I18NPortable;
 
 namespace bildapp.Pages
 {
@@ -18,7 +19,7 @@ namespace bildapp.Pages
         }
         public SavedConfigurations()
         {
-            Title = "Public Saved Configurations";
+            Title = "Public_Saved_Configurations".Translate();
 
             var MainStackContent = new MyStackLayout()
             {
@@ -34,7 +35,7 @@ namespace bildapp.Pages
                 {
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     VerticalOptions = LayoutOptions.FillAndExpand,
-                    Text = "Use Template",
+                    Text = "Use_Template".Translate(),
                     StyleId = i.ToString()
                 };
 
