@@ -186,9 +186,9 @@ namespace bildapp.Pages
                 {
                     string data = EncodeBase64(MakeImagePage.MainText);
 
-                    Console.WriteLine("http://34.136.168.234/Api/Upload.php?TEXT=" + data.ToString() + "&FONT_SIZE=" + MakeImagePage.FontSize + "&PADDING=" + MakeImagePage.BannerPadding.Top + "&TEXT_COLOR=" + MakeImagePage.TextColor.ToHex() + "&BACKGROUND_COLOR=" + MakeImagePage.backgroundColor.ToHex());
-                    await Upload_Image("http://34.136.168.234/Api/Upload.php?TEXT=" + data.ToString() + "&FONT_SIZE=" + MakeImagePage.FontSize + "&PADDING=" + MakeImagePage.BannerPadding.Top + "&TEXT_COLOR=" + EncodeBase64(MakeImagePage.TextColor.ToHex()) + "&BACKGROUND_COLOR=" + EncodeBase64(MakeImagePage.backgroundColor.ToHex()));
-
+                    Console.WriteLine("http://34.136.168.234/Api/Upload.php?TEXT=" + data.ToString() + "&URL=" + EncodeBase64(Misc.CurrentURL) + "&FONT_SIZE=" + MakeImagePage.FontSize + "&PADDING=" + MakeImagePage.BannerPadding.Top + "&TEXT_COLOR=" + EncodeBase64(MakeImagePage.TextColor.ToHex()) + "&BACKGROUND_COLOR=" + EncodeBase64(MakeImagePage.backgroundColor.ToHex()));
+                    var ret = await Upload_Image("http://34.136.168.234/Api/Upload.php?TEXT=" + data.ToString() + "&URL=" + EncodeBase64(Misc.CurrentURL) + "&FONT_SIZE=" + MakeImagePage.FontSize + "&PADDING=" + MakeImagePage.BannerPadding.Top + "&TEXT_COLOR=" + EncodeBase64(MakeImagePage.TextColor.ToHex()) + "&BACKGROUND_COLOR=" + EncodeBase64(MakeImagePage.backgroundColor.ToHex()));
+                    Console.WriteLine("RETURN:" + ret);
                     SavedConfigurations.SavedConfigs.Clear();
                     MainPage.LoadSavedConfigurations();
 

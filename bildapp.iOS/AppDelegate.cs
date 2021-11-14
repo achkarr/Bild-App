@@ -25,6 +25,8 @@ namespace bildapp.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+            Misc.ScreenHeight = (int)UIScreen.MainScreen.Bounds.Height;
+            Misc.ScreenWidth = (int)UIScreen.MainScreen.Bounds.Width;
             return base.FinishedLaunching(app, options);
         }
     }

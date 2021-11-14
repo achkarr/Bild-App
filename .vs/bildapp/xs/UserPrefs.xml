@@ -1,20 +1,27 @@
-﻿<Properties StartupConfiguration="{01BD520A-0E00-4FFB-B829-A8FA3DB3E2AF}|Default">
+﻿<Properties StartupConfiguration="{0F6571ED-F025-4256-A3B0-4A1F6A8FBF91}|Default">
   <MonoDevelop.Ide.ItemProperties.bildapp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DACFD3A9-DB8B-4A5B-B2A9-BF485DF1862F" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="bildapp/Locales/es-ES.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="bildapp/Pages/MakeImagePage.cs">
     <Files>
-      <File FileName="bildapp/Locales/en-US.txt" Line="66" Column="1" />
-      <File FileName="bildapp/FlyoutMenu.cs" Line="69" Column="49" />
-      <File FileName="bildapp/Locales/es-ES.txt" Line="70" Column="30" />
+      <File FileName="bildapp/Locales/en-US.txt" Line="1" Column="1" />
+      <File FileName="bildapp/Locales/es-ES.txt" Line="1" Column="1" />
+      <File FileName="bildapp/Pages/ChangePassword.cs" Line="1" Column="1" />
+      <File FileName="bildapp/Pages/BackgroundView.cs" Line="149" Column="1" />
+      <File FileName="bildapp/Pages/FinishBaner.cs" Line="53" Column="27" />
+      <File FileName="bildapp/Pages/MakeImagePage.cs" Line="83" Column="15" />
+      <File FileName="bildapp/Pages/SavedConfigurations.cs" Line="53" Column="60" />
+      <File FileName="bildapp/Misc.cs" Line="46" Column="1" />
+      <File FileName="bildapp.iOS/AppDelegate.cs" Line="28" Column="13" />
+      <File FileName="bildapp.Android/MainActivity.cs" Line="27" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="bildapp" expanded="True">
             <Node name="bildapp" expanded="True">
-              <Node name="Locales" expanded="True">
-                <Node name="es-ES.txt" selected="True" />
+              <Node name="Locales" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="MakeImagePage.cs" selected="True" />
               </Node>
-              <Node name="Pages" expanded="True" />
               <Node name="Renderer" expanded="True" />
               <Node name="App.xaml" expanded="True" />
               <Node name="MainPage.xaml" expanded="True" />

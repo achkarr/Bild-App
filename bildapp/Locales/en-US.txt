@@ -68,3 +68,4 @@ Public_Saved_Banners = Public Saved Banners
 Settings = Settings
 Logout = Logout
 Bild_App_Menu = Bild App Menu
+Background_Image_Custom = Custom Background Url

@@ -30,7 +30,7 @@ namespace bildapp
     public class Misc
     {
         public static List<string> BackgroundImageArray = new List<string>();
-        public static string Token { get; set; }
+        public static string Token = null;
         public static string Username { get; set; }
         public static string Password { get; set; }
         public static string Email { get; set; }
@@ -40,6 +40,9 @@ namespace bildapp
         public static JObject Obj = null;
         public static string text = "";
         public static string filepath;
+        public static string CurrentURL = "";
+        public static double ScreenHeight { get; set; }
+        public static double ScreenWidth { get; set; }
 
         public Misc()
         {

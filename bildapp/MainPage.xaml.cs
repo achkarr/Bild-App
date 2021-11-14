@@ -62,7 +62,7 @@ namespace bildapp
             LoadSavedConfigurations();
             if (Misc.Token != null)
             {
-                if (Misc.Token.Length > 0)
+                if (Misc.Token.Length > 1)
                 {
                     string Return = "";
                     Task.Factory.StartNew(async () => {
@@ -96,6 +96,7 @@ namespace bildapp
 
         void Skip(System.Object sender, System.EventArgs e)
         {
+            Misc.Token = null;
             Application.Current.MainPage = new MainPageCS();
         }
     }

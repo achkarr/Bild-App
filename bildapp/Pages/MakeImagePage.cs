@@ -35,27 +35,16 @@ namespace bildapp.Pages
         public static double Layout_Height = 0;
         public static double Layout_Width = 0;
 
-        protected override void OnAppearing()
+        protected override void OnSizeAllocated(double width, double height)
         {
-            CenterLabel.WidthRequest = MainBanner.Width;
-            CenterLabel.HeightRequest = MainBanner.Height;
+            AbsoluteLayout.SetLayoutBounds(BannerBackgroundImage, new Rectangle(0.5, 0.5, MainBanner.Width, MainBanner.Height));
+            AbsoluteLayout.SetLayoutFlags(BannerBackgroundImage, AbsoluteLayoutFlags.PositionProportional);
 
-            BannerBackgroundImage.WidthRequest = MainBanner.Width;
-            BannerBackgroundImage.HeightRequest = MainBanner.Height;
-
-            base.OnAppearing();
+            AbsoluteLayout.SetLayoutBounds(CenterLabel, new Rectangle(0.5, 0.5, MainBanner.Width, MainBanner.Height));
+            AbsoluteLayout.SetLayoutFlags(CenterLabel, AbsoluteLayoutFlags.PositionProportional);
+            base.OnSizeAllocated(width, height);
         }
 
-        protected override void OnBindingContextChanged()
-        {
-            CenterLabel.WidthRequest = MainBanner.Width;
-            CenterLabel.HeightRequest = MainBanner.Height;
-
-            BannerBackgroundImage.WidthRequest = MainBanner.Width;
-            BannerBackgroundImage.HeightRequest = MainBanner.Height;
-
-            base.OnBindingContextChanged();
-        }
         public string SaveToDisk(string imageFileName, Stream imageData)
         {
             /*var status = await CrossPermissions.Current.RequestPermissionAsync<StoragePermission>();
@@ -92,6 +81,12 @@ namespace bildapp.Pages
                 Aspect = Aspect.AspectFit,
                 IsVisible = true
             };
+
+            AbsoluteLayout.SetLayoutBounds(BannerBackgroundImage, new Rectangle(0.5, 0.5, Misc.ScreenWidth, 0));
+            AbsoluteLayout.SetLayoutFlags(BannerBackgroundImage, AbsoluteLayoutFlags.PositionProportional);
+
+            AbsoluteLayout.SetLayoutBounds(CenterLabel, new Rectangle(0.5, 0.5, Misc.ScreenWidth, 200));
+            AbsoluteLayout.SetLayoutFlags(CenterLabel, AbsoluteLayoutFlags.PositionProportional);
 
             MainBanner = new StackLayout()
             {
@@ -181,13 +176,13 @@ namespace bildapp.Pages
             {
                 if (Misc.Obj != null)
                 {
-                    CenterLabel.Text = "";//(string)Misc.Obj["Text"];
-                    MainEntry.Text = "";
+                    CenterLabel.Text = (string)Misc.Obj["Text"];
+                    MainEntry.Text = (string)Misc.Obj["Text"];
                     CenterLabel.FontSize = (double)Misc.Obj["Font_Size"];
                     CenterLabel.Padding = new Thickness((double)Misc.Obj["Padding"]);
                     CenterLabel.TextColor = Color.FromHex((string)Misc.Obj["Text_Color"]);
-                    CenterLabel.BackgroundColor = Color.FromHex((string)Misc.Obj["Background_Color"]);
-                    BannerBackgroundImage.Source = (string)Misc.Obj["URL"];
+                    MainBanner.BackgroundColor = Color.FromHex((string)Misc.Obj["Background_Color"]);
+                    BannerBackgroundImage.Source = (string)Misc.Obj["Background_URL"];
 
 
                 }

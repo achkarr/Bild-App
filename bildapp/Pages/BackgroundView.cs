@@ -8,7 +8,7 @@ namespace bildapp.Pages
 {
     public class BackgroundView : ContentPage
     {
-
+        public static Entry UrlEntry;
         public BackgroundView()
         {
 
@@ -37,10 +37,12 @@ namespace bildapp.Pages
                     HeightRequest = 50,
                     WidthRequest = 70,
                     Margin = new Thickness(2, 2, 2, 2),
+                    StyleId = i.ToString()
                 };
                 ImageButton.Clicked += (sender, e) =>
                 {
-                   MakeImagePage.BannerBackgroundImage.Source = ImageButton.Source;
+                    Misc.CurrentURL = Misc.BackgroundImageArray[int.Parse(ImageButton.StyleId)];
+                    MakeImagePage.BannerBackgroundImage.Source = ImageButton.Source;
                 };
                 ImageListStack.Children.Add(ImageButton);
             }
@@ -200,6 +202,19 @@ namespace bildapp.Pages
                     MakeImagePage.CenterLabel.FontAttributes = FontAttributes.Italic;
             };
 
+            UrlEntry = new Entry()
+            {
+                Text = "",
+                HorizontalTextAlignment = TextAlignment.Center,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Margin = new Thickness(15, 2, 2, 15),
+            };
+            UrlEntry.TextChanged += (sender, e) =>
+            {
+                Misc.CurrentURL = UrlEntry.Text;
+                MakeImagePage.BannerBackgroundImage.Source = UrlEntry.Text;
+            };
+
             ScrollView MainContent = new ScrollView();
 
             MainContent.Content = new StackLayout
@@ -252,6 +267,15 @@ namespace bildapp.Pages
                         Orientation = ScrollOrientation.Horizontal,
                         Content = ImageListStack
                     },
+                    new Label()
+                    {
+                        Text = "Background_Image_Custom".Translate(),
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontAttributes = FontAttributes.Bold,
+                        FontSize = 22,
+                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                    },
+                    UrlEntry,
                     new Label()
                     {
                         Text = "Font_Size".Translate(),

@@ -24,6 +24,8 @@ namespace bildapp.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             bildapp.Droid.TestClass.Activity = this;
+            Misc.ScreenHeight = Resources.DisplayMetrics.HeightPixels;
+            Misc.ScreenWidth = Resources.DisplayMetrics.WidthPixels;
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
